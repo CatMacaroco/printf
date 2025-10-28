@@ -6,13 +6,16 @@
 /*   By: cmacaroc <cmacaroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:15:46 by cmacaroc          #+#    #+#             */
-/*   Updated: 2025/10/28 17:23:04 by cmacaroc         ###   ########.fr       */
+/*   Updated: 2025/10/28 17:33:39 by cmacaroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int print_hex(unsigned long n, char x);
+int print_hex(unsigned long n, char x)
+{
+	
+}
 
 int num_length(int n)
 {
