@@ -6,45 +6,12 @@
 /*   By: cmacaroc <cmacaroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:15:46 by cmacaroc          #+#    #+#             */
-/*   Updated: 2025/10/28 17:33:39 by cmacaroc         ###   ########.fr       */
+/*   Updated: 2025/10/29 12:16:14 by cmacaroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "libft.h"
-
-int print_hex(unsigned long n, char x)
-{
-	
-}
-
-int num_length(int n)
-{
-	int		length;
-	long	nb;
-
-	nb = n;
-	length = 0;
-	if (nb <= 0)
-	{
-		length++;
-		nb = -nb;
-	}
-	while (nb > 0)
-	{
-		nb = nb / 10;
-		length++;
-	}
-	return (length);
-}
-
-void ft_putunsignedint_fd(unsigned int u, int fd)
-{
-	if (u > 9)
-	{
-		ft_putunsignedint_fd(u / 10, fd);
-	}
-	ft_putchar_fd(u % 10 + '0', fd);
-}
 
 // const char *format is the mandatory argument of printf
 int ft_printf(const char *format, ...)
@@ -119,10 +86,4 @@ int ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-//If you want to check what value the function returns, you can do a printf of your printf
-int main(void)
-{
-    int result = printf("Sentence to know how many %s\n", "characters were written");
-    
-    printf("%d characters were written", result);
-}
+

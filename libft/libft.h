@@ -6,7 +6,7 @@
 /*   By: cmacaroc <cmacaroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:15:46 by cmacaroc          #+#    #+#             */
-/*   Updated: 2025/10/28 17:32:00 by cmacaroc         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:20:49 by cmacaroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 #include <stddef.h>
 #include <string.h>
 #include <stdlib.h>
-#include <stdarg.h>
 
 typedef struct s_list
 {
@@ -69,9 +68,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-int		ft_printf(const char *format, ...);
-int		print_hex(unsigned long n, char x);
-int		num_length(int n);
-void	ft_putunsignedint_fd(unsigned int u, int fd);
 
 // #endif
