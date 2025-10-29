@@ -6,7 +6,7 @@
 /*   By: cmacaroc <cmacaroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:15:46 by cmacaroc          #+#    #+#             */
-/*   Updated: 2025/10/29 12:16:14 by cmacaroc         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:50:45 by cmacaroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,22 @@ int ft_printf(const char *format, ...)
 			{
 				void *p = va_arg(args, void *);
 				if (!p)
+				{
 					write (1, "0x0", 3);
-				count += 3;
-				count += print_hex((unsigned long)p, 'x');
+					count += 3;
+				}
+				else
+				{
+					write(1, "0x", 2);
+					count += 2;
+					count += print_hex((unsigned long)p, 'x');
+				}
 			}
 			else if (format[i] == 'u')
 			{
 				unsigned int u = (va_arg(args, unsigned int));
 				ft_putunsignedint_fd(u, 1);
-				count += num_length(u);
+				count += unsigned_num_length(u);
 			}
 			else if (format[i] == 'x')
 				count += print_hex(va_arg(args, unsigned int), 'x');
@@ -87,3 +94,10 @@ int ft_printf(const char *format, ...)
 	return (count);
 }
 
+//If you want to check what value the function returns, you can do a printf of your printf
+int main(void)
+{
+    int result = ft_printf("Sentence to know how many %s\n", "characters were written");
+    
+    ft_printf("%d characters were written", result);
+}
