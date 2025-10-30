@@ -6,13 +6,13 @@
 /*   By: cmacaroc <cmacaroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:36:11 by cmacaroc          #+#    #+#             */
-/*   Updated: 2025/10/29 11:33:36 by cmacaroc         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:27:07 by cmacaroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	num_length(int n)
+int	num_length(int n)
 {
 	int		length;
 	long	nb;

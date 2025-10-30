@@ -6,82 +6,28 @@
 /*   By: cmacaroc <cmacaroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:15:46 by cmacaroc          #+#    #+#             */
-/*   Updated: 2025/10/29 17:50:45 by cmacaroc         ###   ########.fr       */
+/*   Updated: 2025/10/30 16:42:06 by cmacaroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
 
 // const char *format is the mandatory argument of printf
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	va_list args;
-	int i;
-	int count;
+	va_list	args;
+	int		i;
+	int		count;
 
 	i = 0;
 	count = 0;
 	va_start(args, format);
-	
 	while (format[i] != '\0')
 	{
-		if(format[i] == '%')
+		if (format[i] == '%')
 		{
 			i++;
-			if(format[i] == 'c')
-			{
-				char c = (char)va_arg(args, int);
-				write(1, &c, 1);
-				count++;
-			}
-			else if(format[i] == 's')
-			{
-				char *s = va_arg(args, char *);
-				if (!s)
-					s = "(null)";
-				ft_putstr_fd(s, 1);
-				count = count + ft_strlen(s);
-			}
-			else if(format[i] == 'd' || format[i] == 'i')
-			{
-				int d = va_arg(args, int);
-				ft_putnbr_fd(d, 1);
-				count += num_length(d);
-			}
-			else if (format[i] == 'p')
-			{
-				void *p = va_arg(args, void *);
-				if (!p)
-				{
-					write (1, "0x0", 3);
-					count += 3;
-				}
-				else
-				{
-					write(1, "0x", 2);
-					count += 2;
-					count += print_hex((unsigned long)p, 'x');
-				}
-			}
-			else if (format[i] == 'u')
-			{
-				unsigned int u = (va_arg(args, unsigned int));
-				ft_putunsignedint_fd(u, 1);
-				count += unsigned_num_length(u);
-			}
-			else if (format[i] == 'x')
-				count += print_hex(va_arg(args, unsigned int), 'x');
-			else if (format[i] == 'X')
-				count += print_hex(va_arg(args, unsigned int), 'X');
-			else if (format[i] == '%')
-				count += write(1, "%", 1);
-			else
-			{
-				write(1, "%", 1);
-				write(1, &format[i], 1);
-				count += 2;
-			}
+			count += handle_format_specifier(format[i], args);
 		}
 		else
 		{
@@ -95,9 +41,9 @@ int ft_printf(const char *format, ...)
 }
 
 //If you want to check what value the function returns, you can do a printf of your printf
-int main(void)
-{
-    int result = ft_printf("Sentence to know how many %s\n", "characters were written");
-    
-    ft_printf("%d characters were written", result);
-}
+// int main(void)
+// {
+//     int result = ft_printf("Sentence to know how many %s\n", "characters were written");
+//     ft_printf("%d characters were written\n", result);
+//     ft_printf("%p\n", NULL);
+// }
