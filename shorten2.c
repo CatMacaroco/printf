@@ -6,12 +6,12 @@
 /*   By: cmacaroc <cmacaroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 12:33:35 by cmacaroc          #+#    #+#             */
-/*   Updated: 2025/10/30 15:18:39 by cmacaroc         ###   ########.fr       */
+/*   Updated: 2025/11/04 12:44:18 by cmacaroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
+#include "./libft/libft.h"
 
 // int print_else()
 // {

@@ -6,12 +6,12 @@
 /*   By: cmacaroc <cmacaroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 10:19:38 by cmacaroc          #+#    #+#             */
-/*   Updated: 2025/10/30 15:17:59 by cmacaroc         ###   ########.fr       */
+/*   Updated: 2025/11/04 12:44:48 by cmacaroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
+#include "./libft/libft.h"
 
 int	print_hex(unsigned long n, char x)
 {
