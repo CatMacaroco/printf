@@ -6,7 +6,7 @@
 /*   By: cmacaroc <cmacaroc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 10:15:46 by cmacaroc          #+#    #+#             */
-/*   Updated: 2025/10/31 12:36:12 by cmacaroc         ###   ########.fr       */
+/*   Updated: 2025/11/04 11:35:13 by cmacaroc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_printf(const char *format, ...)
 
 	i = 0;
 	count = 0;
+	if (format == NULL)
+		return (-1);
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
